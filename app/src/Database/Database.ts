@@ -10,7 +10,8 @@ const path = 'db.json';
  * @class Db
  */
 export class Db {
-
+  [x: string]: any;
+   protected fileContent:string = 'db.json';
   /**
    *
    * Return all data from the database using the ListCar interfece
@@ -18,13 +19,23 @@ export class Db {
    * @return {*}  {ListCar}
    * @memberof Db
    */
+  constructor() {
+    const filePath = 'db.json';
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    this.data=JSON.parse(fileContent);
+  }
+
+  public gerData() {
+    return this.data;
+  }
+
   private readFilesJson(): ListCar {
 
     const filePath = 'db.json';
     try {
      // Tente ler o arquivo
      const fileContent = fs.readFileSync(filePath, 'utf-8');
-     console.log('Conteúdo do arquivo:', fileContent);
+   //  console.log('Conteúdo do arquivo:', fileContent);
      return { crs: [] };
    } catch (error) {
      // Se o arquivo não existir, crie-o
@@ -51,10 +62,8 @@ export class Db {
  * @param {ICar[]} carros
  * @memberof Db
  */
-public addCarJson(carros: ICar[]): void {
-    const dataFile = this.readFilesJson();
-    dataFile.crs.push(...carros);
-    this.writeFileJson(dataFile);
+public addCarJson(carros: ICar): void {
+    this.writeFileJson( JSON.parse(this.fileContent).Carros.push(carros));
     console.log('Added successfully.');
   }
 
@@ -86,7 +95,7 @@ public addCarJson(carros: ICar[]): void {
 
   public listCar():{}{
     const dataFile = this.readFilesJson();
-    console.log('List of Car:', dataFile.crs);
+   // console.log('List of Car:', dataFile.crs);
   return dataFile;
   } 
 }
