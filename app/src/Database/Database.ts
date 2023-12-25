@@ -19,13 +19,21 @@ export class Db {
    * @memberof Db
    */
   private readFilesJson(): ListCar {
+
+    const filePath = 'db.json';
     try {
-      const conteudo = fs.readFileSync(path, 'utf-8');
-      return JSON.parse(conteudo);
-    } catch (erro) {
-      console.error('Erro reading JSON:', erro);
-      return { crs: [] };
-    }
+     // Tente ler o arquivo
+     const fileContent = fs.readFileSync(filePath, 'utf-8');
+     console.log('Conteúdo do arquivo:', fileContent);
+     return { crs: [] };
+   } catch (error) {
+     // Se o arquivo não existir, crie-o
+     fs.writeFileSync(filePath, '{"data": []}', 'utf-8');
+     console.log('Arquivo criado.');
+     return { crs: [] };
+   }
+
+
   }
 
   /**
@@ -76,8 +84,9 @@ public addCarJson(carros: ICar[]): void {
     }
   }
 
-  public listCar(): void {
+  public listCar():{}{
     const dataFile = this.readFilesJson();
     console.log('List of Car:', dataFile.crs);
-  }
+  return dataFile;
+  } 
 }
