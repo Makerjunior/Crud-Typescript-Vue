@@ -1,101 +1,49 @@
-import * as fs from 'fs';
-import { ICar, ListCar } from '../interfaces/interfaces';
+import * as fs from "fs";
+import { ICar } from "../interfaces/interfaces";
 
-const path = 'db.json';
-
-/**
- *
- *
- * @export
- * @class Db
- */
 export class Db {
-  [x: string]: any;
-   protected fileContent:string = 'db.json';
-  /**
-   *
-   * Return all data from the database using the ListCar interfece
-   * @private
-   * @return {*}  {ListCar}
-   * @memberof Db
-   */
-  constructor() {
-    const filePath = 'db.json';
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    this.data=JSON.parse(fileContent);
-  }
+  private data: any;
+  private filePath: string = "db.json";
 
-  public gerData() {
+  constructor() {
+    const fileContent = fs.readFileSync(this.filePath, "utf-8");
+    this.data = JSON.parse(fileContent).Carros;
+  }
+  public getDados() {
     return this.data;
   }
 
-  private readFilesJson(): ListCar {
-
-    const filePath = 'db.json';
-    try {
-     // Tente ler o arquivo
-     const fileContent = fs.readFileSync(filePath, 'utf-8');
-   //  console.log('Conteúdo do arquivo:', fileContent);
-     return { crs: [] };
-   } catch (error) {
-     // Se o arquivo não existir, crie-o
-     fs.writeFileSync(filePath, '{"data": []}', 'utf-8');
-     console.log('Arquivo criado.');
-     return { crs: [] };
-   }
-
-
+  public addNewCar(newCar: ICar) {
+    this.data.push(newCar);
+    fs.writeFileSync(
+      this.filePath,
+      JSON.stringify({ Carros: this.data }, null, 2)
+    );
   }
 
-  /**
-   *
-   * Write to file database
-   * @private
-   * @param {ListCar} dataFile
-   * @memberof Db
-   */
-  private writeFileJson(dataFile: ListCar): void {
-    fs.writeFileSync(path, JSON.stringify(dataFile, null, 2));
-  }
-/**
- * Adds a Car to the database
- * @param {ICar[]} carros
- * @memberof Db
- */
-public addCarJson(carros: ICar): void {
-    this.writeFileJson( JSON.parse(this.fileContent).Carros.push(carros));
-    console.log('Added successfully.');
+  public updateCar(car: ICar): void {
+    const { ano, marca, placa, preco } = car;
+    this.data.find((v: any) => {
+      if (v.placa == car.placa) {
+        v.ano = ano;
+        v.marca = marca;
+        v.placa = placa;
+        v.preco = preco;
+      }
+      fs.writeFileSync(
+        this.filePath,
+        JSON.stringify({ Carros: this.data }, null, 2)
+      );
+    });
   }
 
-  public updateCarJson(placa: string, novoCarro: ICar): void {
-    const dataFile = this.readFilesJson();
-    const indice = dataFile.crs.findIndex(carro => carro.placa === placa);
-
-    if (indice !== -1) {
-      dataFile.crs[indice] = novoCarro;
-      this.writeFileJson(dataFile);
-      console.log('Update in Car.');
-    } else {
-      console.error('Car not found for update.');
-    }
+  public deleteCar(_placa: string): void {
+    this.data = this.data.filter((carro: ICar) => carro.placa !== _placa);
+    fs.writeFileSync(
+      this.filePath,
+      JSON.stringify({ Carros: this.data }, null, 2)
+    );
   }
-
-  public deleteCarJson(placa: string): void {
-    const dataFile = this.readFilesJson();
-    const indice = dataFile.crs.findIndex(carro => carro.placa === placa);
-
-    if (indice !== -1) {
-      dataFile.crs.splice(indice, 1);
-      this.writeFileJson(dataFile);
-      console.log('Car removed successfull.');
-    } else {
-      console.error('Car not .');
-    }
-  }
-
-  public listCar():{}{
-    const dataFile = this.readFilesJson();
-   // console.log('List of Car:', dataFile.crs);
-  return dataFile;
-  } 
 }
+
+export const data = new Db();

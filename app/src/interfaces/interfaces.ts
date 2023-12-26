@@ -6,6 +6,3 @@ export interface ICar {
   }
   
 
-export interface ListCar {
-    crs: ICar[];
-  }

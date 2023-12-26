@@ -1,8 +1,7 @@
 import { ICar } from "../interfaces/interfaces";
-import { Db } from "../Database/Database";
+import { data } from "../Database/Database";
 
 export class AddCar {
-  private static carros:ICar[]=[];
   constructor() {}
   static creatCars() {
    for (let i = 0; i < 20; i++) {
@@ -12,10 +11,8 @@ export class AddCar {
         placa: `XYZ${i + 1000}`,
         preco: 25000 + i * 1000,
       };
-      this.carros.push(novoCarro);
+      data.addNewCar(novoCarro);
     }
-    const concesionaria = new Db();
-    concesionaria.addCarJson(this.carros)
   }
 }
 
