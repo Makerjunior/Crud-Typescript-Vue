@@ -1,7 +1,12 @@
+
+import { App } from "./Controllers/ControlerHome";
 import { data } from "./Database/Database";
 
 import express, { Request, Response } from "express";
 
+const app = new App();
+
+/*
 const app = express();
 app.use(express.json());
 const port = 3000;
@@ -32,3 +37,4 @@ app.put("/updatecar", (req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
+ */
