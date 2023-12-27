@@ -18,8 +18,8 @@ router.post('/addCar', (req: Request, res: Response) => {
   res.json({ api });
 });
 
-router.delete('/delete', (req: Request, res: Response) => {
-    const newCar: ICar = req.body;
+router.post('/delete', (req: Request, res: Response) => {
+    const newCar = req.body;
     const api = data.deleteCar(newCar.placa);
     res.json({ api });
   });

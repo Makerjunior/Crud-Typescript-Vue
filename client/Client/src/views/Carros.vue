@@ -25,7 +25,7 @@
               <button class="btn-editar" @click="abrirModalEdicao(item)">Editar</button>
             </td>
             <td>
-              <button class="btn-apagar">Apagar</button>
+              <button class="btn-apagar" @click="apagarElement(item)">Apagar</button>
             </td>
           </tr>
         </tbody>
@@ -55,9 +55,9 @@
         <input v-model="carroEditado.preco" />
      
 
-       <button  id="btn" @click="()=>salvarEdicao()">&nbsp;Salvar&nbsp;&nbsp;</button> 
+       <button  id="btnSalvar" @click="()=>salvarEdicao()">&nbsp;Salvar&nbsp;&nbsp;</button> 
        
-       <button  id="bth" @click="fecharModalEdicao">Cancelar</button>
+       <button  id="bthCancelar" @click="fecharModalEdicao">Cancelar</button>
       
         
       
@@ -81,32 +81,20 @@ export default {
   },
   mounted() {
     this.getDados();
+    
+   
   },
   methods: {
     getDados() {
       axios.get('http://localhost:3000/')
         .then(response => {
+         
           this.data = response.data.api;
         })
         .catch(error => {
           console.error('Erro na requisição:', error);
         });
     },
-    salvarEdicao() {
-      console.log("Salvando");
-   // const apiUrl = 'http://localhost:3000/update';
-/*
-    // Fazendo a requisição POST com o Axios
-    axios.post(apiUrl, carro)
-      .then(response => {
-        console.log('Dados salvos com sucesso:', response.data);
-        this.modalVisivel = false;
-      })
-      .catch(error => {
-        console.error('Erro ao salvar os dados:', error);
-      });
-      */
-  },
     abrirModalEdicao(carro) {
       this.carroEditado = { ...carro };
       this.modalVisivel = true;
@@ -115,12 +103,40 @@ export default {
       this.modalVisivel = false;
     },
     salvarEdicao() {
-      // Lógica para salvar as edições
-      // Aqui você pode fazer uma requisição HTTP para atualizar os dados no servidor
-      // Após salvar, feche o modal
+     const apiUrl = 'http://localhost:3000/update';
+
+  // Fazendo a requisição POST com o Axios
+    axios.post(apiUrl, this.carroEditado)
+      .then(response => {
+        console.log('Dados salvos com sucesso:', response.data);
+        this.modalVisivel = false;
+      })
+      .catch(error => {
+        console.error('Erro ao salvar os dados:', error);
+      });
+      console.log("Salvando")
       this.modalVisivel = false;
+      this.getDados();
     },
+    apagarElement(item){
+      if (confirm(`Tem certeza que deseja excluir: ${item.marca} - ${item.ano} - ${item.placa} - ${item.preco} ?`)) {    
+      const apiUrl = 'http://localhost:3000/delete';
+      axios.post(apiUrl,item)
+      .then((e)=>{
+        alert(`Elemento deletado ${item.marca} - ${item.ano} - ${item.placa} - ${item.preco} `);
+        });
+      }
+       this.getDados();
+    }
   },
+   alerta(msg,item){
+    if (confirm(msg)) {
+      this.apagarElement(item); 
+      }else{
+        return false;
+        }
+        
+   }
 };
 </script>
 
@@ -211,8 +227,22 @@ p {
   margin-bottom: 20px;
 }
 
-#btn {
-  margin:5px
+#btnSalvar{
+  margin:7px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50; /* Cor de fundo verde */
 }
+#bthCancelar {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db; /* Cor de fundo azul */
+
+}
+
 
 </style>
