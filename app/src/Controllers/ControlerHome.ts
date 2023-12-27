@@ -2,7 +2,7 @@
 // App.ts
 import express from 'express';
 import carRoutes from './carRoutes'; // Importe as rotas de carros
-
+import cors from 'cors'; // Importe o pacote cors
 export class App {
   public server: any;
   private port: number = 3000;
@@ -16,6 +16,8 @@ export class App {
 
   config(): void {
     this.server.use(express.json());
+    this.server.use(cors()); // Use o middleware cors aqui
+    
   }
 
   setupRoutes() {

@@ -1,13 +1,13 @@
 import * as fs from "fs";
 import { ICar } from "../interfaces/interfaces";
+import { readData } from "../Classes/updateData";
 
 export class Db {
   private data: any;
-  private filePath: string = "db.json";
-
+  
+  
   constructor() {
-    const fileContent = fs.readFileSync(this.filePath, "utf-8");
-    this.data = JSON.parse(fileContent).Carros;
+      this.data = readData.getdata();
   }
   public getDados() {
     return this.data;
@@ -15,10 +15,8 @@ export class Db {
 
   public addNewCar(newCar: ICar) {
     this.data.push(newCar);
-    fs.writeFileSync(
-      this.filePath,
-      JSON.stringify({ Carros: this.data }, null, 2)
-    );
+    readData.serData(this.data)
+    this.getDados();
   }
 
   public updateCar(car: ICar): void {
@@ -30,19 +28,16 @@ export class Db {
         v.placa = placa;
         v.preco = preco;
       }
-      fs.writeFileSync(
-        this.filePath,
-        JSON.stringify({ Carros: this.data }, null, 2)
-      );
+      readData.serData(this.data)
+      this.getDados();
+    
     });
   }
 
   public deleteCar(_placa: string): void {
     this.data = this.data.filter((carro: ICar) => carro.placa !== _placa);
-    fs.writeFileSync(
-      this.filePath,
-      JSON.stringify({ Carros: this.data }, null, 2)
-    );
+    readData.serData(this.data)
+    this.getDados();
   }
 }
 
