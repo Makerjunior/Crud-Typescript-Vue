@@ -1,10 +1,20 @@
 import { ICar } from "../interfaces/interfaces";
 import { data } from "../Database/Database";
 
+/**
+ *Class use to add cars in database
+ * @export
+ * @class 
+ */
 export class AddCar {
-  constructor() {}
+  constructor() { }
+  /**
+   * Function to add cars in database
+   * @static
+   * @memberof AddCar
+   */
   static creatCars() {
-   for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 20; i++) {
       const novoCarro: ICar = {
         ano: 2022,
         marca: `Carro${i + 1}`,
