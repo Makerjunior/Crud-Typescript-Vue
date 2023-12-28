@@ -1,12 +1,6 @@
 {
   "Carros": [
     {
-      "ano": 1980,
-      "marca": "Toyota",
-      "placa": "ABC1234",
-      "preco": 26000
-    },
-    {
       "ano": 1985,
       "marca": "Honda",
       "placa": "XYZ5678",

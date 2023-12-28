@@ -1,4 +1,5 @@
 import * as fs from "fs";
+import { Logger } from "../Logger/Logger";
 /**
  *Static classe use to read and write database
  * @export
@@ -10,13 +11,14 @@ export class readData {
      * @type {string}
      * @memberof readData
      */
-    static filePath: string = "db.json";
+    static filePath: string = "app/src/Database/db.json";
     static data: any;
     /**
      * Static method for reading the json database
      * @memberof readData
      * @returns {}
-     */
+     */ 
+    @Logger("Lendo arquivo!")
     static getdata() {
         const fileContent = fs.readFileSync(this.filePath, "utf-8");
         return JSON.parse(fileContent).Carros;
