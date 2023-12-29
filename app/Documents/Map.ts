@@ -4,7 +4,7 @@ const meuMapa = new Map();
 // Adicionando pares chave-valor
 meuMapa.set('chave1', 'valor1');
 meuMapa.set(42, 'valor2');
-meuMapa.set({ nome: 'Alice' }, 'valor3');
+meuMapa.set('valor3',{ nome: 'Alice' } );
 
 // Obtendo valores usando as chaves
 console.log(meuMapa.get('chave1'));  // Saída: valor1
@@ -29,3 +29,8 @@ for (const valor of meuMapa.values()) {
 for (const [chave, valor] of meuMapa.entries()) {
   console.log(`${chave.nome}: ${valor}`);
 }
+// Excluindo um par chave-valor
+//meuMapa.delete('chave1');
+// Verificando o tamanho do mapa
+console.log(meuMapa.size);          // Saída: 2</s>
+console.log(meuMapa);
