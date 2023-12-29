@@ -11,7 +11,7 @@ export class readData {
      * @type {string}
      * @memberof readData
      */
-    static filePath: string = "app/src/Database/db.json";
+    static filePath: string = "db.json";
     static data: any;
     /**
      * Static method for reading the json database
