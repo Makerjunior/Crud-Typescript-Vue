@@ -46,3 +46,4 @@ export function Logger(prefix?: string, retur?: boolean) {
     return descriptor;
   };
 }
+
