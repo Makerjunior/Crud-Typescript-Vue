@@ -10,4 +10,7 @@ git clone https://github.com/Makerjunior/Crud-Typescript-Vue/tree/Update2.git
 ```
 npm i
 ```
-Agora basta rodar o servidor em seguida o client.
+Agora basta rodar o servidor em seguida o client rodando o comando em nas pastas app e Client.
+```
+npm run start
+```
