@@ -1,6 +1,8 @@
 ## CRUD Typescript - Vue
 A  Aplicação mostra como criar um CRUD usando Typescripe e VueJS deixanda assim o back-and completamente separado do front-and.
 
+![Logo do R](./img/img.png)
+
 ### Clone o projeto 
 bash
 ```
