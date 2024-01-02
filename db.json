@@ -1,250 +1,184 @@
 {
-    "Carros": [
-      {
-        "ano": 2022,
-        "marca": "Monza",
-        "placa": "JPT9387",
-        "preco": 28000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro1",
-        "placa": "XYZ1000",
-        "preco": 25000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro2",
-        "placa": "XYZ1001",
-        "preco": 26000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro3",
-        "placa": "XYZ1002",
-        "preco": 27000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro4",
-        "placa": "XYZ1003",
-        "preco": 28000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro5",
-        "placa": "XYZ1004",
-        "preco": 29000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro6",
-        "placa": "XYZ1005",
-        "preco": 30000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro7",
-        "placa": "XYZ1006",
-        "preco": 31000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro8",
-        "placa": "XYZ1007",
-        "preco": 32000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro9",
-        "placa": "XYZ1008",
-        "preco": 33000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro10",
-        "placa": "XYZ1009",
-        "preco": 34000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro11",
-        "placa": "XYZ1010",
-        "preco": 35000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro12",
-        "placa": "XYZ1011",
-        "preco": 36000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro13",
-        "placa": "XYZ1012",
-        "preco": 37000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro14",
-        "placa": "XYZ1013",
-        "preco": 38000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro15",
-        "placa": "XYZ1014",
-        "preco": 39000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro16",
-        "placa": "XYZ1015",
-        "preco": 40000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro17",
-        "placa": "XYZ1016",
-        "preco": 41000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro18",
-        "placa": "XYZ1017",
-        "preco": 42000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro19",
-        "placa": "XYZ1018",
-        "preco": 43000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro20",
-        "placa": "XYZ1019",
-        "preco": 44000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro1",
-        "placa": "XYZ1000",
-        "preco": 25000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro2",
-        "placa": "XYZ1001",
-        "preco": 26000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro3",
-        "placa": "XYZ1002",
-        "preco": 27000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro4",
-        "placa": "XYZ1003",
-        "preco": 28000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro5",
-        "placa": "XYZ1004",
-        "preco": 29000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro6",
-        "placa": "XYZ1005",
-        "preco": 30000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro7",
-        "placa": "XYZ1006",
-        "preco": 31000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro8",
-        "placa": "XYZ1007",
-        "preco": 32000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro9",
-        "placa": "XYZ1008",
-        "preco": 33000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro10",
-        "placa": "XYZ1009",
-        "preco": 34000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro11",
-        "placa": "XYZ1010",
-        "preco": 35000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro12",
-        "placa": "XYZ1011",
-        "preco": 36000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro13",
-        "placa": "XYZ1012",
-        "preco": 37000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro14",
-        "placa": "XYZ1013",
-        "preco": 38000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro15",
-        "placa": "XYZ1014",
-        "preco": 39000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro16",
-        "placa": "XYZ1015",
-        "preco": 40000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro17",
-        "placa": "XYZ1016",
-        "preco": 41000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro18",
-        "placa": "XYZ1017",
-        "preco": 42000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro19",
-        "placa": "XYZ1018",
-        "preco": 43000
-      },
-      {
-        "ano": 2022,
-        "marca": "Carro20",
-        "placa": "XYZ1019",
-        "preco": 44000
-      }
-    ]
-  }
+  "Carros": [
+    {
+      "ano": 1985,
+      "marca": "Honda",
+      "placa": "XYZ5678",
+      "preco": 27000
+    },
+    {
+      "ano": 1990,
+      "marca": "Ford",
+      "placa": "DEF9876",
+      "preco": 28000
+    },
+    {
+      "ano": 1995,
+      "marca": "Chevrolet",
+      "placa": "GHI5432",
+      "preco": 29000
+    },
+    {
+      "ano": 2000,
+      "marca": "Nissan",
+      "placa": "JKL1098",
+      "preco": 30000
+    },
+    {
+      "ano": 2005,
+      "marca": "Toyota",
+      "placa": "MNO4567",
+      "preco": 31000
+    },
+    {
+      "ano": 2010,
+      "marca": "Honda",
+      "placa": "PQR7654",
+      "preco": 32000
+    },
+    {
+      "ano": 2015,
+      "marca": "Ford",
+      "placa": "STU4321",
+      "preco": 33000
+    },
+    {
+      "ano": 2020,
+      "marca": "Chevrolet",
+      "placa": "VWX2109",
+      "preco": 34000
+    },
+    {
+      "ano": 2023,
+      "marca": "Nissan",
+      "placa": "YZA8765",
+      "preco": 44000
+    },
+    {
+      "ano": 1982,
+      "marca": "Toyota",
+      "placa": "BCD1111",
+      "preco": 25000
+    },
+    {
+      "ano": 1987,
+      "marca": "Honda",
+      "placa": "EFG2222",
+      "preco": 26000
+    },
+    {
+      "ano": 1992,
+      "marca": "Ford",
+      "placa": "HIJ3333",
+      "preco": 27000
+    },
+    {
+      "ano": 1997,
+      "marca": "Chevrolet",
+      "placa": "KLM4444",
+      "preco": 28000
+    },
+    {
+      "ano": 2002,
+      "marca": "Nissan",
+      "placa": "NOP5555",
+      "preco": 29000
+    },
+    {
+      "ano": 2007,
+      "marca": "Toyota",
+      "placa": "QRS6666",
+      "preco": 30000
+    },
+    {
+      "ano": 2012,
+      "marca": "Honda",
+      "placa": "TUV7777",
+      "preco": 31000
+    },
+    {
+      "ano": 2017,
+      "marca": "Ford",
+      "placa": "WXY8888",
+      "preco": 32000
+    },
+    {
+      "ano": 2022,
+      "marca": "Chevrolet",
+      "placa": "ZAB9999",
+      "preco": 33000
+    },
+    {
+      "ano": 1983,
+      "marca": "Nissan",
+      "placa": "CDE0000",
+      "preco": 34000
+    },
+    {
+      "ano": 1988,
+      "marca": "Toyota",
+      "placa": "FGH1111",
+      "preco": 25000
+    },
+    {
+      "ano": 1993,
+      "marca": "Honda",
+      "placa": "IJK2222",
+      "preco": 26000
+    },
+    {
+      "ano": 1998,
+      "marca": "Ford",
+      "placa": "LMN3333",
+      "preco": 27000
+    },
+    {
+      "ano": 2003,
+      "marca": "Chevrolet",
+      "placa": "OPQ4444",
+      "preco": 28000
+    },
+    {
+      "ano": 2008,
+      "marca": "Nissan",
+      "placa": "RST5555",
+      "preco": 29000
+    },
+    {
+      "ano": 2013,
+      "marca": "Toyota",
+      "placa": "UVW6666",
+      "preco": 30000
+    },
+    {
+      "ano": 2018,
+      "marca": "Honda",
+      "placa": "XYZ7777",
+      "preco": 31000
+    },
+    {
+      "ano": 2021,
+      "marca": "Ford",
+      "placa": "DEF8888",
+      "preco": 32000
+    },
+    {
+      "ano": 1984,
+      "marca": "Chevrolet",
+      "placa": "GHI9999",
+      "preco": 33000
+    },
+    {
+      "ano": 1989,
+      "marca": "Nissan",
+      "placa": "JKL0000",
+      "preco": 34000
+    },
+    {
+      "ano": 1994,
+      "marca": "Toyota",
+      "placa": "JKL0000",
+      "preco": 34000
+    }
+  ]
+}
